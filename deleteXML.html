@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo"></h2>
+</body>
+<script>
+    // Create an instance of XMLHttpRequest
+    var deleteRequest = new XMLHttpRequest();
+
+    // Define a callback function to handle the response
+    deleteRequest.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Request completed and successful (status 200)
+            console.log('DELETE request successful.');
+            console.log('Response:', deleteRequest.responseText);
+        }
+    };
+
+    // Open the request (DELETE method, API endpoint with the ID of the resource to delete, asynchronous)
+    deleteRequest.open("DELETE", "https://jsonplaceholder.typicode.com/users/1", true);
+
+    // Send the DELETE request
+    deleteRequest.send();
+
+    
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo"></h2>
+</body>
+<script>
+    // Update data object with the new values
+    var updatedData = {
+        id: 1, // Assuming you want to update a user with ID 1
+        name: 'Updated Name',
+        username: 'updatedusername',
+        email: 'updatedemail@example.com',
+        address: {
+            street: '456 Elm St',
+            city: 'Los Angeles',
+            zipcode: '90001'
+        }
+    };
+
+    // Convert the updated data object to JSON string
+    var updatedJsonData = JSON.stringify(updatedData);
+
+    // Create an instance of XMLHttpRequest
+    var updateRequest = new XMLHttpRequest();
+
+    // Define a callback function to handle the response
+    updateRequest.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Request completed and successful (status 200)
+            console.log('PUT request successful.');
+            console.log('Response:', updateRequest.responseText);
+        }
+    };
+
+    // Open the request (PUT method, API endpoint with the ID of the resource to update, asynchronous)
+    updateRequest.open("PUT", "https://jsonplaceholder.typicode.com/users/1", true);
+
+    // Set request header to specify content type as JSON
+    updateRequest.setRequestHeader("Content-Type", "application/json");
+
+    // Send the PUT request with the updated JSON data payload
+    updateRequest.send(updatedJsonData);
+
+</script>
+</html>
