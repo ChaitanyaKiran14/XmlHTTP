@@ -1,0 +1,16 @@
+sdgjdgbjsdgisgs ggrorogjewtjojg
+ok chaitu 
+avtumdi le abba
+
+HTTP STATUS CODES in XML HTTP :
+200 : Resource has been created and response has been returned with more details
+201 : Resource had been created and response  has been returned with limited details
+204 : Processed Successfully
+300 : Redirectional Status
+404 : Fault with client side
+403 : Forbidden
+404 : Not Found Error
+409 : Conflict Error
+500 : Server Side Error
+
+
